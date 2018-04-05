@@ -11,6 +11,7 @@ define ssl::cert (
 
         file { "/etc/ssl/private/${certificate}.key":
             ensure => $ensure,
+            mode   => '0644',
             source => "puppet:///ssl-keys/${certificate}.key",
         }
     }
